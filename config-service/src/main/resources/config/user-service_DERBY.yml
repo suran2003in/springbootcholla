@@ -1,0 +1,23 @@
+server:
+  port: 1116
+  
+spring:
+  application:
+    metadataMap:
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+    
+  datasource:
+    driver-class-name: org.apache.derby.jdbc.ClientDriver  
+    url: jdbc:derby://localhost:1527/derbycholla
+    username: cholla
+    password: cholla
+    connection-test-query: SELECT 1 FROM SYSIBM.SYSDUMMY1;
+    
+    
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+
+    

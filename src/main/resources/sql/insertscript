@@ -1,0 +1,3 @@
+create table authuser(username varchar(100), password varchar(100));
+
+create table account(name varchar(100), lastseen date);

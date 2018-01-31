@@ -1,0 +1,30 @@
+server:
+  port: 1119
+  context-path: /accounts
+  
+spring:
+  application:
+    metadataMap:
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+    
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:C:\siv\Database\sqllite\chollsqllite\chollatech
+    username: 
+    password: 
+    connection-test-query: select 'hello word'
+  oauth2:
+    client:
+      clientId: account-service
+      clientSecret: ${ACCOUNT_SERVICE_PASSWORD}
+      accessTokenUri: http://localhost:5000/uaa/oauth/token
+      grant-type: client_credentials
+      scope: server
+ 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+
+    

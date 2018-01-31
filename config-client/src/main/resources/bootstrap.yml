@@ -1,0 +1,10 @@
+server:
+  port: 1113
+ 
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      uri: http://localhost:8888
+      fail-fast: true

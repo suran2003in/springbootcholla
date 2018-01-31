@@ -1,0 +1,15 @@
+create table users(ID int PRIMARY KEY NOT NULL, NAME varchar(100), EMAIL varchar(150));
+
+DROP TABLE USERS;
+
+insert into users values(1,'suresh','suresh.ram@scb.com');
+insert into users values(2,'ani','ani.rasdfm@scb.com');
+insert into users values(3,'ganesh','gani.dfs@scb.com');
+insert into users values(4,'sri','sri.ram@342.com');
+insert into users values(5,'ramesh','ramesh.ds2@scb.com');
+
+
+
+
+
+select 'hello word';

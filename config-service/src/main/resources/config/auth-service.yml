@@ -1,0 +1,20 @@
+server:
+  context-path: /uaa
+  port: 5000
+  
+spring:
+  application:
+    metadataMap:
+    instanceId: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+    
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:C:\siv\Database\sqllite\chollsqllite\chollatech
+    username: 
+    password: 
+    connection-test-query: select 'hello word';
+ 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
