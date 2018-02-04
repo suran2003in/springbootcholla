@@ -3,6 +3,7 @@
  */
 package com.tech.chola.auth.domain;
 
+import javax.annotation.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -19,6 +20,7 @@ import javax.persistence.Table;
 @Table(name="userauth")
 public class Authusers {
 	@Id
+	@Column(name ="username")
 	private String username;
 	@Column(name="password")
 	private String password;

@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+//import com.tech.cholla.account.client.ConfigClient;
 import com.tech.cholla.account.domain.Account;
 import com.tech.cholla.account.domain.User;
+import com.tech.cholla.account.domain.Users;
 import com.tech.cholla.account.service.AccountService;
 
 @RestController
@@ -23,6 +25,10 @@ public class AccountController {
 	private final Logger log = LoggerFactory.getLogger(getClass());
 	@Autowired
 	private AccountService accountService;
+	
+	 
+	/*@Autowired
+	private ConfigClient confclient;*/
 
 	@PreAuthorize("#oauth2.hasScope('server') or #name.equals('demo')")
 	@RequestMapping(path = "/{name}", method = RequestMethod.GET)
@@ -44,5 +50,14 @@ public class AccountController {
 	public Account createNewAccount(@Valid @RequestBody User user) {
 		log.debug("Users input is : " + user.toString());
 		return accountService.create(user);
+//		 System.out.println("AccountController.createNewAccount()" + confclient.getUserById(2));
+//		return null;
 	}
+	
+/*
+	@RequestMapping(path = "/clientusers/{id}", method = RequestMethod.GET)
+	public Iterable<Users> getUsers(@PathVariable int id) {
+		System.out.println("Users input is : " + id+""); 
+		return confclient.getUserById(id);
+	}*/
 }

@@ -1,27 +1,9 @@
 package com.tech.cholla.account.domain;
 
-import org.hibernate.validator.constraints.Length;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-
-import lombok.Data;
-
-/*
-@Entity	
-@Table(name="authuser")
 public class User {
 
-	@Id
-	@Column(name="username")
 	private String username;
-	
-	@NotNull
-	@Length(min = 6, max = 40)
-	@Column(name="password")
 	private String password;
 	
 	public String getUsername() {
@@ -45,8 +27,7 @@ public class User {
 	
 	
 }
-*/
-
+/*
 
 @Entity
 @Table(name="users")
@@ -73,3 +54,4 @@ public class User {
 	                id, username, null);
 	    }
 }
+*/
